@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "send-coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "start": "agar start",
     "test": "agar test",
     "build": "agar build"
