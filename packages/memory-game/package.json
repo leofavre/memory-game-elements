@@ -1,0 +1,15 @@
+{
+  "name": "@leofavre/memory-game-component",
+  "description": "Memory game web component",
+  "version": "0.1.0",
+  "module": "src/index.js",
+  "main": "dist/cjs/es5/index.js",
+  "jsnext:main": "dist/es/es6/index.js",
+  "dependencies": {
+    "lit-html": "^0.11.4",
+    "observed-properties": "^2.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
