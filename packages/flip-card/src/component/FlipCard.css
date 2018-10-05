@@ -1,0 +1,40 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+.flip-card--wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  perspective: 600px;
+}
+
+:host([reveal]) .flip-card--wrapper {
+  transform: rotateY(180deg);
+}
+
+.flip-card--face {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card--face-front {
+  backface-visibility: hidden;
+}
+
+.flip-card--face-back {
+  transform: rotateY(180deg);
+}
+
+::slotted(*) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
