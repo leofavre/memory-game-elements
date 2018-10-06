@@ -8,6 +8,11 @@
   display: grid;
   grid-template-columns: repeat(var(--cards-per-line, 6), 1fr);
   grid-gap: var(--gap, 20px) var(--gap, 20px);
+  pointer-events: none;
+}
+
+.memory-game--wrapper-interactive {
+  pointer-events: all;
 }
 
 .memory-game--card {

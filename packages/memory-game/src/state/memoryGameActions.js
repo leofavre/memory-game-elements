@@ -1,22 +1,25 @@
 import sequence from '../helpers/sequence.js';
 import shuffle from '../helpers/shuffle.js';
+import waitInPromise from '../helpers/waitInPromise.js';
 
 import {
   isCardRevealed,
   isCardMatched,
   isGameOver,
-  isPairOfCardsVisible
+  isPairOfCardsVisible,
+  isVisiblePairOfCardsAMatch
 } from './memoryGameSelectors.js';
 
 import {
   DISTRIBUTE_CARDS,
   REVEAL_CARD,
+  MATCH_CARDS,
   HIDE_CARDS,
   ALLOW_INTERACTION,
   DISALLOW_INTERACTION
 } from './memoryGameConstants.js';
 
-export const distributeCards = (cards) => ({
+export const distributeCards = cards => ({
   type: DISTRIBUTE_CARDS,
   cards,
   positions: shuffle(sequence(cards.length * 2))
@@ -25,6 +28,10 @@ export const distributeCards = (cards) => ({
 export const revealCard = position => ({
   type: REVEAL_CARD,
   position
+});
+
+export const matchCards = () => ({
+  type: MATCH_CARDS
 });
 
 export const hideCards = () => ({
@@ -39,34 +46,36 @@ export const disallowInteraction = () => ({
   type: DISALLOW_INTERACTION
 });
 
-export const beforePlay = (position, state) => {
+export const requestPlayAsync = position => async (dispatch, state) => {
+  let currentState = state;
+
   if (isCardRevealed(position, state)) {
     console.log('Cannot reveal an already revealed card.');
-    return false;
-  }
-
-  if (isCardMatched(position, state)) {
+  } else if (isCardMatched(position, state)) {
     console.log('Cannot reveal an already matched card.');
-    return false;
-  }
-
-  if (isPairOfCardsVisible(state)) {
-    console.log('Cannot reveal more than two cards.');
-    return false;
-  }
-
-  console.log('The selected card will be revealed.');
-  return true;
-};
-
-export const afterPlay = (state) => {
-  console.log('Layout should be changed accordingly.');
-
-  if (isGameOver(state)) {
-    console.log('The game is now over.');
   } else if (isPairOfCardsVisible(state)) {
-    setTimeout(() => {
-      console.log('The board should be cleaned.');
-    }, 3000);
+    console.log('Cannot reveal more than two cards.');
+  } else {
+    console.log('The selected card will be revealed.');
+    currentState = dispatch(revealCard(position));
+  }
+
+  if (isPairOfCardsVisible(currentState)) {
+    dispatch(disallowInteraction);
+    currentState = dispatch(matchCards);
+
+    if (isVisiblePairOfCardsAMatch(currentState)) {
+      console.log('Congratulations. It’s a match!');
+    } else {
+      await waitInPromise(2000)();
+    }
+
+    if (isGameOver(currentState)) {
+      console.log('The game is now over.');
+      dispatch(disallowInteraction);
+    } else {
+      dispatch(hideCards);
+      dispatch(allowInteraction);
+    }
   }
 };

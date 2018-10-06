@@ -2,6 +2,7 @@ import {
   INITIAL_STATE,
   DISTRIBUTE_CARDS,
   REVEAL_CARD,
+  MATCH_CARDS,
   HIDE_CARDS,
   ALLOW_INTERACTION,
   DISALLOW_INTERACTION
@@ -20,25 +21,23 @@ export default (state = INITIAL_STATE, action = {}) => {
       return { ...state, cards: nextCards };
 
     case REVEAL_CARD:
-      const { position } = action;
+      return {
+        ...state,
+        revealed: [...state.revealed, action.position]
+      };
 
-      const nextRevealed = [
-        ...state.revealed,
-        position
-      ];
-
+    case MATCH_CARDS:
       const nextMatched = [
         ...state.matched,
         ...state.cards.reduce((result, card) => [
           ...result,
-          ...card.positions.every(position => nextRevealed.includes(position))
+          ...card.positions.every(position => state.revealed.includes(position))
             ? card.positions : []
         ], [])
       ];
 
       return {
         ...state,
-        revealed: nextRevealed,
         matched: nextMatched
       };
 

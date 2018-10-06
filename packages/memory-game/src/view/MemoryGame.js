@@ -1,8 +1,10 @@
 import withObservedProperties from 'observed-properties';
 import { render } from 'lit-html';
 import memoryGameReducer from '../state/memoryGameReducer.js';
-import { distributeCards, revealCard } from '../state/memoryGameActions.js';
+import { distributeCards, requestPlayAsync } from '../state/memoryGameActions.js';
 import MemoryGameView from './MemoryGameView.js';
+import isFunction from '../helpers/isFunction.js';
+import isPromise from '../helpers/isPromise.js';
 
 export default class extends withObservedProperties(HTMLElement) {
   constructor () {
@@ -24,7 +26,7 @@ export default class extends withObservedProperties(HTMLElement) {
           break;
 
         case 'cards':
-          this.updateState(distributeCards(newValue));
+          this.dispatch(distributeCards(newValue));
           break;
       }
     }
@@ -32,12 +34,26 @@ export default class extends withObservedProperties(HTMLElement) {
 
   handleClick (position) {
     return () => {
-      this.updateState(revealCard(position));
+      this.dispatch(requestPlayAsync(position));
     };
   }
 
-  updateState (callback) {
-    this.state = memoryGameReducer(this.state, callback);
+  dispatch (action) {
+    let resolvedAction = action;
+
+    if (isFunction(resolvedAction)) {
+      resolvedAction = action(this.dispatch.bind(this), this.state);
+    }
+
+    if (isPromise(resolvedAction)) {
+      return resolvedAction.then(asyncAction => {
+        this.state = memoryGameReducer(this.state, asyncAction);
+        return this.state;
+      });
+    } else {
+      this.state = memoryGameReducer(this.state, resolvedAction);
+      return this.state;
+    }
   }
 
   render () {
