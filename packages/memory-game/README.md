@@ -35,7 +35,7 @@ $memoryGame.cards = [{
 ## Properties
 
 #### `cards` (Array)
-An arrays of objects representing the cards to be rendered.
+An arrays of objects representing the cards to be rendered. See [Usage](#usage) for example.
 
 
 ## CSS custom properties
