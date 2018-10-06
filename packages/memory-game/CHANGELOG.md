@@ -1,3 +1,10 @@
+# [@leofavre/memory-game-component-v1.2.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.1.0...@leofavre/memory-game-component-v1.2.0) (2018-10-06)
+
+
+### Features
+
+* Write documentation ([f020c2a](https://github.com/leofavre/memory-game-elements/commit/f020c2a)), closes [#16](https://github.com/leofavre/memory-game-elements/issues/16)
+
 # [@leofavre/memory-game-component-v1.1.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.0.0...@leofavre/memory-game-component-v1.1.0) (2018-10-06)
 
 
