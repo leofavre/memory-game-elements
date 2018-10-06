@@ -24,5 +24,12 @@ const apiCards = [{
 const $memoryGame = document.querySelector('memory-game');
 $memoryGame.cards = apiCards;
 
+$memoryGame.addEventListener('start', console.log);
+$memoryGame.addEventListener('reveal', console.log);
+$memoryGame.addEventListener('hide', console.log);
+$memoryGame.addEventListener('match', console.log);
+$memoryGame.addEventListener('error', console.log);
+$memoryGame.addEventListener('finish', console.log);
+
 window.customElements.define('flip-card', FlipCard);
 window.customElements.define('memory-game', MemoryGame);

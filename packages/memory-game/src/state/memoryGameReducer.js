@@ -5,7 +5,8 @@ import {
   MATCH_CARDS,
   HIDE_CARDS,
   ALLOW_INTERACTION,
-  DISALLOW_INTERACTION
+  DISALLOW_INTERACTION,
+  SEND_EVENT
 } from './memoryGameConstants.js';
 
 export default (state = INITIAL_STATE, action = {}) => {
@@ -49,6 +50,16 @@ export default (state = INITIAL_STATE, action = {}) => {
 
     case DISALLOW_INTERACTION:
       return { ...state, isInteractive: false };
+
+    case SEND_EVENT:
+      const event = (action.detail != null)
+        ? { name: action.name, detail: action.detail }
+        : { name: action.name };
+
+      return {
+        ...state,
+        events: [...state.events, event]
+      };
 
     default:
       return state;
