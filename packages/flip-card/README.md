@@ -12,6 +12,11 @@ The card is not clickable. Any click behaviour must be implemented by the applic
 <flip-card revealed>Content</flip-card>
 ```
 
+```javascript
+import FlipCard from '@leofavre/flip-card-component';
+window.customElements.define('flip-card', FlipCard);
+```
+
 
 ## Attributes / Properties
 
