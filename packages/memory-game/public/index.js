@@ -1,4 +1,5 @@
-import '../src/index.js';
+import FlipCard from '@leofavre/flip-card-component';
+import MemoryGame from '../src/index.js';
 
 const apiCards = [{
   name: 'Leonardo Favre',
@@ -22,3 +23,6 @@ const apiCards = [{
 
 const $memoryGame = document.querySelector('memory-game');
 $memoryGame.cards = apiCards;
+
+window.customElements.define('flip-card', FlipCard);
+window.customElements.define('memory-game', MemoryGame);
