@@ -19,10 +19,10 @@ import {
   DISALLOW_INTERACTION
 } from './memoryGameConstants.js';
 
-export const distributeCards = cards => ({
+export const distributeCards = (cards, positions) => ({
   type: DISTRIBUTE_CARDS,
   cards,
-  positions: shuffle(sequence(cards.length * 2))
+  positions: positions || shuffle(sequence(cards.length * 2))
 });
 
 export const revealCard = position => ({
