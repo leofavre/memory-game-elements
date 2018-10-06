@@ -23,16 +23,20 @@ Controls whether the content is shown. The default is to show the back of the ca
 
 #### `--proportion`
 - Default: 1/1
+
 A fraction of the width of the card divided by its height.
 
 #### `--perspective`
 - Default: 1200px
+
 Controls the CSS property with the same name.
 
 #### `--background`
 - Default: grey
+
 Set the background of the back of the card.
 
 #### `--boreder-radius`
 - Default: 0px
+
 Controls the CSS property with the same name.
