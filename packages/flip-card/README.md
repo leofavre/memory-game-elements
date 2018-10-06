@@ -41,7 +41,12 @@ Set the background of the back of the card.
 
 Controls the CSS property with the same name.
 
-#### `--boreder`
+#### `--border`
 - Default: none
 
 Controls the CSS property with the same name.
+
+#### `--speed`
+- Default: 0.32s
+
+Controls the speed of the animation.
