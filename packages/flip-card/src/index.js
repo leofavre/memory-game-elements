@@ -1,3 +1,3 @@
-import FlipCard from './component/FlipCard.js';
+import FlipCard from './view/FlipCard.js';
 
 export default FlipCard;
