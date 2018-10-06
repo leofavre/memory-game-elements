@@ -19,29 +19,34 @@ The card is not clickable. Any click behaviour must be implemented by the applic
 Controls whether the content is shown. The default is to show the back of the card.
 
 
-## CSS properties
+## CSS custom properties
 
-#### `--proportion`
+#### `--flip-card-proportion`
 - Default: 1/1
 
 A fraction of the width of the card divided by its height.
 
-#### `--perspective`
+#### `--flip-card-perspective`
 - Default: 1200px
 
 Controls the CSS property with the same name.
 
-#### `--background`
+#### `--flip-card-background`
 - Default: grey
 
 Set the background of the back of the card.
 
-#### `--boreder-radius`
+#### `--flip-card-border-radius`
 - Default: 0px
 
 Controls the CSS property with the same name.
 
-#### `--boreder`
+#### `--flip-card-border`
 - Default: none
 
 Controls the CSS property with the same name.
+
+#### `--flip-card-speed`
+- Default: 0.32s
+
+Controls the speed of the animation.

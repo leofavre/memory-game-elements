@@ -16,13 +16,14 @@ import {
   MATCH_CARDS,
   HIDE_CARDS,
   ALLOW_INTERACTION,
-  DISALLOW_INTERACTION
+  DISALLOW_INTERACTION,
+  SEND_EVENT
 } from './memoryGameConstants.js';
 
-export const distributeCards = cards => ({
+export const distributeCards = (cards, positions) => ({
   type: DISTRIBUTE_CARDS,
   cards,
-  positions: shuffle(sequence(cards.length * 2))
+  positions: positions || shuffle(sequence(cards.length * 2))
 });
 
 export const revealCard = position => ({
@@ -46,18 +47,25 @@ export const disallowInteraction = () => ({
   type: DISALLOW_INTERACTION
 });
 
+export const sendEvent = (name, detail) => ({
+  type: SEND_EVENT,
+  name,
+  detail
+});
+
 export const requestPlayAsync = position => async (dispatch, state) => {
   let currentState = state;
+  let matchHappened = false;
 
   if (isCardRevealed(position, state)) {
-    console.log('Cannot reveal an already revealed card.');
+    dispatch(sendEvent('error', 'Cannot reveal an already revealed card.'));
   } else if (isCardMatched(position, state)) {
-    console.log('Cannot reveal an already matched card.');
+    dispatch(sendEvent('error', 'Cannot reveal an already matched card.'));
   } else if (isPairOfCardsVisible(state)) {
-    console.log('Cannot reveal more than two cards.');
+    dispatch(sendEvent('error', 'Cannot reveal more than two cards.'));
   } else {
-    console.log('The selected card will be revealed.');
     currentState = dispatch(revealCard(position));
+    dispatch(sendEvent('reveal', position));
   }
 
   if (isPairOfCardsVisible(currentState)) {
@@ -65,16 +73,23 @@ export const requestPlayAsync = position => async (dispatch, state) => {
     currentState = dispatch(matchCards);
 
     if (isVisiblePairOfCardsAMatch(currentState)) {
-      console.log('Congratulations. It’s a match!');
+      dispatch(sendEvent('match', currentState.revealed));
+      matchHappened = true;
     } else {
       await waitInPromise(2000)();
     }
 
     if (isGameOver(currentState)) {
-      console.log('The game is now over.');
       dispatch(disallowInteraction);
+      dispatch(sendEvent('finish'));
     } else {
-      dispatch(hideCards);
+      const previouslyRevealed = currentState.revealed;
+      currentState = dispatch(hideCards);
+
+      if (!matchHappened) {
+        dispatch(sendEvent('hide', previouslyRevealed));
+      }
+
       dispatch(allowInteraction);
     }
   }

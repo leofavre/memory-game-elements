@@ -22,11 +22,16 @@ export default class extends withObservedProperties(HTMLElement) {
     if (oldValue !== newValue) {
       switch (propName) {
         case 'state':
+          if (oldValue && oldValue.events !== newValue.events) {
+            const { name, detail } = [...newValue.events].pop();
+            this.dispatchEventAndMethod(name, detail);
+          }
           this.render();
           break;
 
         case 'cards':
-          this.dispatch(distributeCards(newValue));
+          this.updateState(distributeCards(newValue));
+          this.dispatchEventAndMethod('start');
           break;
       }
     }
@@ -34,15 +39,15 @@ export default class extends withObservedProperties(HTMLElement) {
 
   handleClick (position) {
     return () => {
-      this.dispatch(requestPlayAsync(position));
+      this.updateState(requestPlayAsync(position));
     };
   }
 
-  dispatch (action) {
+  updateState (action) {
     let resolvedAction = action;
 
     if (isFunction(resolvedAction)) {
-      resolvedAction = action(this.dispatch.bind(this), this.state);
+      resolvedAction = action(this.updateState.bind(this), this.state);
     }
 
     if (isPromise(resolvedAction)) {
@@ -53,6 +58,21 @@ export default class extends withObservedProperties(HTMLElement) {
     } else {
       this.state = memoryGameReducer(this.state, resolvedAction);
       return this.state;
+    }
+  }
+
+  dispatchEventAndMethod (name, detail) {
+    const event = new CustomEvent(name, {
+      bubbles: true,
+      detail
+    });
+
+    const method = this[`on${name}`];
+
+    this.dispatchEvent(event);
+
+    if (isFunction(method)) {
+      method(event);
     }
   }
 

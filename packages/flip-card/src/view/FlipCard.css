@@ -1,9 +1,10 @@
 :host {
-  --proportion: 1/1;
-  --perspective: 1200px;
-  --background: grey;
-  --border-radius: 0px;
-  --border: none;
+  --flip-card-proportion: 1/1;
+  --flip-card-perspective: 1200px;
+  --flip-card-background: grey;
+  --flip-card-border-radius: 0px;
+  --flip-card-border: none;
+  --flip-card-speed: 0.32s;
 
   height: auto !important;
   margin: 0 !important;
@@ -16,8 +17,8 @@
   display: block;
   width: 100%;
   height: 0;
-  padding-bottom: calc(1 / (var(--proportion, 1)) * 100%);
-  perspective: var(--perspective, 1200px);
+  padding-bottom: calc(1 / (var(--flip-card-proportion, 1/1)) * 100%);
+  perspective: var(--flip-card-perspective, 1200px);
 }
 
 .flip-card--surface {
@@ -25,7 +26,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: all 0.32s ease-in-out;
+  transition: transform var(--flip-card-speed, 0.32s) ease-in-out;
 }
 
 :host([revealed]) .flip-card--surface {
@@ -38,16 +39,15 @@
   height: 100%;
   backface-visibility: hidden;
   overflow: hidden;
-  border-radius: var(--border-radius, 0px);
-  border: var(--border, none);
+  border-radius: var(--flip-card-border-radius, 0px);
+  border: var(--flip-card-border, none);
 }
 
 .flip-card--side-back {
   display: flex;
   width: 100%;
   height: 100%;
-  cursor: default;
-  background: var(--background, grey);
+  background: var(--flip-card-background, grey);
 }
 
 .flip-card--side-front {
