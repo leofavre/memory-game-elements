@@ -2,11 +2,12 @@
   --proportion: 1/1;
   --perspective: 1200px;
   --background: grey;
+  --border-radius: 0px;
+
   height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
   background: transparent !important;
-  overflow: hidden !important;
 }
 
 .flip-card--wrapper {
@@ -36,6 +37,7 @@
   height: 100%;
   backface-visibility: hidden;
   overflow: hidden;
+  border-radius: var(--border-radius, 0px);
 }
 
 .flip-card--side-back {
