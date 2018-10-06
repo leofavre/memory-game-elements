@@ -4,12 +4,14 @@ import sequence from '../helpers/sequence.js';
 import {
   getNumberOfCards,
   getCardAtPosition,
-  isCardRevealed
+  isCardRevealed,
+  isCardMatched
 } from '../state/memoryGameSelectors.js';
 
 const renderCard = ({ state, handleClick }) => position => {
   const { name, img } = getCardAtPosition(position, state);
-  const revealed = isCardRevealed(position, state);
+  const revealed = isCardRevealed(position, state) ||
+    isCardMatched(position, state);
 
   return html`
     <flip-card

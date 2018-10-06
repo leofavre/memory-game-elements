@@ -14,5 +14,8 @@ export const isCardInTheGame = (position, { revealed, matched }) =>
 
 export const isPairOfCardsVisible = ({ revealed }) => revealed.length === 2;
 
+export const isVisiblePairOfCardsAMatch = ({ revealed, matched }) =>
+  revealed.every(position => matched.includes(position));
+
 export const isGameOver = (state) =>
   getNumberOfCards(state) === state.matched.length;
