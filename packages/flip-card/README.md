@@ -40,3 +40,8 @@ Set the background of the back of the card.
 - Default: 0px
 
 Controls the CSS property with the same name.
+
+#### `--boreder`
+- Default: none
+
+Controls the CSS property with the same name.

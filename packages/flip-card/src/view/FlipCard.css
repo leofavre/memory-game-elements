@@ -3,6 +3,7 @@
   --perspective: 1200px;
   --background: grey;
   --border-radius: 0px;
+  --border: none;
 
   height: auto !important;
   margin: 0 !important;
@@ -38,6 +39,7 @@
   backface-visibility: hidden;
   overflow: hidden;
   border-radius: var(--border-radius, 0px);
+  border: var(--border, none);
 }
 
 .flip-card--side-back {
