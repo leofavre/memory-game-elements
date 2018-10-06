@@ -1,3 +1,15 @@
+# [@leofavre/flip-card-component-v1.2.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.1.0...@leofavre/flip-card-component-v1.2.0) (2018-10-06)
+
+
+### Bug Fixes
+
+* Speed up animation ([2a8c5e2](https://github.com/leofavre/memory-game-elements/commit/2a8c5e2))
+
+
+### Features
+
+* Add border parameter ([6c12068](https://github.com/leofavre/memory-game-elements/commit/6c12068))
+
 # [@leofavre/flip-card-component-v1.1.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.0.0...@leofavre/flip-card-component-v1.1.0) (2018-10-06)
 
 
