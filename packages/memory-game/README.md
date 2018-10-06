@@ -11,6 +11,7 @@ A memory game web component. It receives an array of objects describing cards wh
 
 ```javascript
 import MemoryGame from '@leofavre/memory-game-component';
+
 window.customElements.define('memory-game', MemoryGame);
 
 const $memoryGame = document.querySelector('memory-game');
