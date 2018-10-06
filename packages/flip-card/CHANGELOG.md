@@ -1,3 +1,15 @@
+# [@leofavre/flip-card-component-v1.1.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.0.0...@leofavre/flip-card-component-v1.1.0) (2018-10-06)
+
+
+### Bug Fixes
+
+* Show overflow ([d849ebb](https://github.com/leofavre/memory-game-elements/commit/d849ebb))
+
+
+### Features
+
+* Allow styling border-radius ([a25ed96](https://github.com/leofavre/memory-game-elements/commit/a25ed96))
+
 # @leofavre/flip-card-component-v1.0.0 (2018-10-06)
 
 
