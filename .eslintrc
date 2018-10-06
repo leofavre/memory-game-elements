@@ -31,7 +31,7 @@
     "test": true
   },
   "overrides": [{
-    "files": "*.{spec}.js",
+    "files": "*.spec.js",
     "rules": {
       "no-unused-expressions": "off"
     }

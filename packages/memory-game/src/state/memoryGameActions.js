@@ -11,12 +11,14 @@ import {
 import {
   DISTRIBUTE_CARDS,
   REVEAL_CARD,
+  MATCH_CARDS,
   HIDE_CARDS,
   ALLOW_INTERACTION,
   DISALLOW_INTERACTION
 } from './memoryGameConstants.js';
+import waitInPromise from '../helpers/waitInPromise.js';
 
-export const distributeCards = (cards) => ({
+export const distributeCards = cards => ({
   type: DISTRIBUTE_CARDS,
   cards,
   positions: shuffle(sequence(cards.length * 2))
@@ -25,6 +27,10 @@ export const distributeCards = (cards) => ({
 export const revealCard = position => ({
   type: REVEAL_CARD,
   position
+});
+
+export const matchCards = () => ({
+  type: MATCH_CARDS
 });
 
 export const hideCards = () => ({
@@ -39,7 +45,7 @@ export const disallowInteraction = () => ({
   type: DISALLOW_INTERACTION
 });
 
-export const beforePlay = (position, state) => {
+export const isPlayValid = (position, state) => {
   if (isCardRevealed(position, state)) {
     console.log('Cannot reveal an already revealed card.');
     return false;
@@ -57,6 +63,22 @@ export const beforePlay = (position, state) => {
 
   console.log('The selected card will be revealed.');
   return true;
+};
+
+export const requestPlayAsync = position => async (dispatch, state) => {
+  let nextState = state;
+
+  if (isPlayValid(position, state)) {
+    nextState = dispatch(revealCard(position));
+  }
+
+  if (isPairOfCardsVisible(nextState)) {
+    dispatch(disallowInteraction());
+    await waitInPromise(2000)();
+    dispatch(matchCards());
+    dispatch(hideCards());
+    dispatch(allowInteraction());
+  }
 };
 
 export const afterPlay = (state) => {

@@ -5,7 +5,33 @@ A set of web components for a memory game.
 
 ## Game loop
 
-* Allows interaction.
+#### Fetch cards
+
+* Waits for user to selected a GitHub username.
+
+* Disallows interaction.
+
+* Fetches names and pictures of users related to that account.
+
+  * Fetch ok?
+
+    * Saves cards.
+
+    * Sends success message.
+
+  * Fetch error?
+
+    * Sends faillure message.
+
+    * Allows interaction.
+  
+    * Goes back to **Fetch cards**.
+
+#### Mount board
+
+* Distribute cards.
+
+#### Play game
 
 * Waits for user to choose a card.
 
@@ -31,6 +57,12 @@ A set of web components for a memory game.
 
     * Sends success message.
 
-    * Finishes Game loop.
+    * Goes to **End game**.
 
-* Restarts Game loop.
+* Allows interaction.
+
+* Goes back to **Play game**.
+
+#### End game
+
+* Shows "Start again" and "About" buttons.
