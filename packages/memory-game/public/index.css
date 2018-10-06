@@ -9,6 +9,7 @@ body {
 	align-items: center;
   margin: 0;
   min-height: 100%;
+  background: #ddd;
 }
 
 memory-game {
@@ -18,4 +19,5 @@ memory-game {
   font-family: "Whitney SSm A", "Whitney SSm B";
   font-style: normal;
   font-weight: 400;
+  perspective: 1800px;
 }

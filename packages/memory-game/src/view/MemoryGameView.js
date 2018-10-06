@@ -18,6 +18,7 @@ const renderCard = ({ state, handleClick }) => position => {
       ?revealed=${revealed}
       @click=${handleClick(position)}
       class="memory-game--card">
+      <span class="memory-game--bg"></span>
       <span class="memory-game--text">${name}</span>
       <img class="memory-game--media" src="${img}">
     </flip-card>
