@@ -9,15 +9,15 @@ export default class extends HTMLElement {
   }
 
   static get observedAttributes () {
-    return ['reveal'];
+    return ['revealed'];
   }
 
-  get reveal () {
-    return this.hasAttribute('reveal');
+  get revealed () {
+    return this.hasAttribute('revealed');
   }
 
-  set reveal (value) {
-    return setAttr(this, 'reveal', value);
+  set revealed (value) {
+    return setAttr(this, 'revealed', value);
   }
 
   connectedCallback () {
