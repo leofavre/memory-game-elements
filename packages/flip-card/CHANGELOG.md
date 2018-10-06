@@ -1,3 +1,16 @@
+# [@leofavre/flip-card-component-v1.3.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.2.0...@leofavre/flip-card-component-v1.3.0) (2018-10-06)
+
+
+### Bug Fixes
+
+* Allow cursor style to be changed ([067485d](https://github.com/leofavre/memory-game-elements/commit/067485d))
+* Scope css properties ([564c955](https://github.com/leofavre/memory-game-elements/commit/564c955))
+
+
+### Features
+
+* Parameterize the speed of the animation ([b48cecd](https://github.com/leofavre/memory-game-elements/commit/b48cecd))
+
 # [@leofavre/flip-card-component-v1.2.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.1.0...@leofavre/flip-card-component-v1.2.0) (2018-10-06)
 
 
