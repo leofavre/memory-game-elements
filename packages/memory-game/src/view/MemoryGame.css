@@ -21,6 +21,10 @@
   pointer-events: all;
 }
 
+.memory-game--wrapper-interactive .memory-game--card {
+  cursor: pointer;
+}
+
 .memory-game--card {
   --flip-card-perspective: none;
   --flip-card-proportion: 3.5/4.2;
