@@ -1,5 +1,5 @@
 {
-  "name": "memory-game-core",
+  "name": "memory-game-elements",
   "description": "Web components for a memory game.",
   "author": "Leonardo Favre <leo@leofavre.com> (https://www.leofavre.com/)",
   "license": "MIT",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leofavre/memory-game-core.git"
+    "url": "git+https://github.com/leofavre/memory-game-elements.git"
   },
   "keywords": [
     "web-component",
@@ -22,9 +22,9 @@
     "game"
   ],
   "bugs": {
-    "url": "https://github.com/leofavre/memory-game-core/issues"
+    "url": "https://github.com/leofavre/memory-game-elements/issues"
   },
-  "homepage": "https://github.com/leofavre/memory-game-core#readme",
+  "homepage": "https://github.com/leofavre/memory-game-elements#readme",
   "devDependencies": {
     "@leofavre/agar": "^1.5.0",
     "@semantic-release/changelog": "^3.0.0",
