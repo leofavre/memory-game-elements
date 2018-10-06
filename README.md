@@ -1,5 +1,7 @@
-# Memory Game Core
-A memory game made with Redux and Web components.
+# Memory Game Elements
+
+A set of web components for a memory game.
+
 
 ## Game loop
 
