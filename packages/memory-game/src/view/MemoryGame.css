@@ -1,20 +1,35 @@
 :host {
   display: block;
   --cards-per-line: 6;
+  --gap: 20px;
 }
 
 .memory-game--wrapper {
   display: grid;
   grid-template-columns: repeat(var(--cards-per-line, 6), 1fr);
-  grid-gap: 25px 25px;
+  grid-gap: var(--gap, 20px) var(--gap, 20px);
+}
+
+.memory-game--card {
+  --proportion: 3.5/4.2;
+  --border: 1px solid #aab9b9;
+  --background: #aab9b9;
 }
 
 .memory-game--media {
+  position: absolute;
   display: block;
-  width: 100%;
+  top: calc(4% * var(--proportion));
+  left: 4%;
+  width: 92%;
   height: auto;
 }
 
 .memory-game--text {
   position: absolute;
+  top: 82.5%;
+  left: 4%;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-transform: uppercase;
 }

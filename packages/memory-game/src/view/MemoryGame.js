@@ -30,14 +30,14 @@ export default class extends withObservedProperties(HTMLElement) {
     }
   }
 
-  updateState (callback) {
-    this.state = memoryGameReducer(this.state, callback);
-  }
-
   handleClick (position) {
     return () => {
       this.updateState(revealCard(position));
     };
+  }
+
+  updateState (callback) {
+    this.state = memoryGameReducer(this.state, callback);
   }
 
   render () {
