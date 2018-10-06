@@ -10,6 +10,7 @@ body {
 }
 
 memory-game {
+  --cards-per-line: 4;
   width: 60%;
   margin: auto;
 }
