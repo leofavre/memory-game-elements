@@ -1,3 +1,5 @@
 import FlipCard from './view/FlipCard.js';
 
-export default FlipCard;
+if (!customElements.get('flip-card')) {
+  customElements.define('flip-card', FlipCard);
+}

@@ -1,3 +1,5 @@
 import MemoryGame from './view/MemoryGame.js';
 
-export default MemoryGame;
+if (!customElements.get('memory-game')) {
+  customElements.define('memory-game', MemoryGame);
+}
