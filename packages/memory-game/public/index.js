@@ -1,5 +1,5 @@
-import FlipCard from '@leofavre/flip-card-component';
-import MemoryGame from '../src/index.js';
+import '@leofavre/flip-card-component';
+import '../src/index.js';
 
 const apiCards = [{
   name: 'Leonardo Favre',
@@ -30,6 +30,3 @@ $memoryGame.addEventListener('hide', console.log);
 $memoryGame.addEventListener('match', console.log);
 $memoryGame.addEventListener('error', console.log);
 $memoryGame.addEventListener('finish', console.log);
-
-window.customElements.define('flip-card', FlipCard);
-window.customElements.define('memory-game', MemoryGame);
