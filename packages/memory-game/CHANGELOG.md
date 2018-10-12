@@ -1,3 +1,10 @@
+# [@leofavre/memory-game-component-v1.2.2](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.1...@leofavre/memory-game-component-v1.2.2) (2018-10-12)
+
+
+### Bug Fixes
+
+* Import Flip Card directly ([f01db96](https://github.com/leofavre/memory-game-elements/commit/f01db96))
+
 # [@leofavre/memory-game-component-v1.2.1](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.0...@leofavre/memory-game-component-v1.2.1) (2018-10-08)
 
 
