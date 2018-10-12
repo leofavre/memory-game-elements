@@ -10,23 +10,21 @@ A memory game web component. It receives an array of objects describing cards wh
 ```
 
 ```javascript
-import MemoryGame from '@leofavre/memory-game-component';
-
-window.customElements.define('memory-game', MemoryGame);
+import '@leofavre/memory-game-component';
 
 const $memoryGame = document.querySelector('memory-game');
 
 $memoryGame.cards = [{
-  image: 'isle-of-dogs/chief.png',
+  img: 'isle-of-dogs/chief.png',
   name: 'Chief'
 }, {
-  image: 'isle-of-dogs/duke.png',
+  img: 'isle-of-dogs/duke.png',
   name: 'Duke'
 }, {
-  image: 'isle-of-dogs/king.png',
+  img: 'isle-of-dogs/king.png',
   name: 'King'
 }, {
-  image: 'isle-of-dogs/boss.png',
+  img: 'isle-of-dogs/boss.png',
   name: 'Boss'
 }]
 ```
