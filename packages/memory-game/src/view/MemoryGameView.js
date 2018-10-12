@@ -1,4 +1,5 @@
 import { html } from 'lit-html';
+import '@leofavre/flip-card-component';
 import sequence from '../helpers/sequence.js';
 
 import {
