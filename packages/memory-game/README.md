@@ -1,6 +1,6 @@
 # Memory Game
 
-A memory game web component. It receives an array of objects describing cards where each one should contain an image and a name. The cards are duplicated, distributed randomly and then the game begins.
+A memory game web component that receives an array of objects describing cards with images and names. The cards are duplicated and randomly distributed facing down. The goal of the game is to reveal matching cards two by two.
 
 
 ## Usage
