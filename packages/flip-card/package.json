@@ -1,7 +1,7 @@
 {
   "name": "@leofavre/flip-card-component",
   "description": "A flip card web component.",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "module": "src/index.js",
   "main": "dist/cjs/es5/index.js",
   "jsnext:main": "dist/es/es6/index.js",

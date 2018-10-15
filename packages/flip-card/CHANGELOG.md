@@ -1,3 +1,10 @@
+# [@leofavre/flip-card-component-v1.3.2](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.3.1...@leofavre/flip-card-component-v1.3.2) (2018-10-15)
+
+
+### Bug Fixes
+
+* Standardize documentation between repositories ([c5f2742](https://github.com/leofavre/memory-game-elements/commit/c5f2742))
+
 # [@leofavre/flip-card-component-v1.3.1](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.3.0...@leofavre/flip-card-component-v1.3.1) (2018-10-08)
 
 
