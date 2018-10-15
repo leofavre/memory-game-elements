@@ -1,3 +1,10 @@
+# [@leofavre/memory-game-component-v1.2.3](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.2...@leofavre/memory-game-component-v1.2.3) (2018-10-15)
+
+
+### Bug Fixes
+
+* Standardize documentation between repositories ([c5f2742](https://github.com/leofavre/memory-game-elements/commit/c5f2742))
+
 # [@leofavre/memory-game-component-v1.2.2](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.1...@leofavre/memory-game-component-v1.2.2) (2018-10-12)
 
 
