@@ -1,8 +1,8 @@
 # Flip Card
 
-A web component of a card that can be flipped. First, the back of the card is shown, and it can be flipped by applying the `revealed` attribute.
+A flip card web component. The card starts facing down and can be flipped by applying the `revealed` attribute.
 
-The card is not clickable. Any click behaviour must be implemented by the application.
+The component is not clickable. Any click behaviour must be implemented by the application.
 
 
 ## Usage
@@ -53,4 +53,4 @@ Controls the CSS property with the same name.
 #### `--flip-card-speed`
 - Default: 0.32s
 
-Controls the speed of the animation.
+Controls the animation speed.
