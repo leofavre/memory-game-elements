@@ -1,7 +1,7 @@
 {
   "name": "@leofavre/memory-game-component",
   "description": "A memory game web component.",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "module": "src/index.js",
   "main": "dist/cjs/es5/index.js",
   "jsnext:main": "dist/es/es6/index.js",
