@@ -53,7 +53,8 @@ export const sendEvent = (name, detail) => ({
   detail
 });
 
-export const requestPlayAsync = position => async (dispatch, state) => {
+export const requestPlayAsync = position => async (dispatch, getState) => {
+  const state = getState();
   let currentState = state;
   let matchHappened = false;
 
