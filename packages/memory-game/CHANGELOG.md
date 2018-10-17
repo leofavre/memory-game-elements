@@ -1,3 +1,10 @@
+# [@leofavre/memory-game-component-v1.3.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.3...@leofavre/memory-game-component-v1.3.0) (2018-10-17)
+
+
+### Features
+
+* Enhance native `HTMLElement` with `withElmnt` ([dde46f8](https://github.com/leofavre/memory-game-elements/commit/dde46f8))
+
 # [@leofavre/memory-game-component-v1.2.3](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.2...@leofavre/memory-game-component-v1.2.3) (2018-10-15)
 
 
