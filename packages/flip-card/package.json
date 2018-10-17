@@ -6,7 +6,7 @@
   "main": "dist/cjs/es5/index.js",
   "jsnext:main": "dist/es/es6/index.js",
   "dependencies": {
-    "lit-html": "^0.11.4"
+    "@leofavre/elmnt": "^1.4.0"
   },
   "publishConfig": {
     "access": "public"

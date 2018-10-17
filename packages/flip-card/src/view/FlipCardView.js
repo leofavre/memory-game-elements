@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from '@leofavre/elmnt';
 
 export default () => html`
   <style>
