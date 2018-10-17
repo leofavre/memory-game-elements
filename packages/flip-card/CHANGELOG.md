@@ -1,3 +1,10 @@
+# [@leofavre/flip-card-component-v1.4.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.3.2...@leofavre/flip-card-component-v1.4.0) (2018-10-17)
+
+
+### Features
+
+* Enhance native `HTMLElement` with `withElmnt` ([8117ff4](https://github.com/leofavre/memory-game-elements/commit/8117ff4))
+
 # [@leofavre/flip-card-component-v1.3.2](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.3.1...@leofavre/flip-card-component-v1.3.2) (2018-10-15)
 
 
