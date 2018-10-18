@@ -1,6 +1,9 @@
 :host {
-  --memory-game-cards-per-line: 6;
-  --memory-game-gap: 20px;
+  --flip-card-perspective: none;
+  --flip-card-proportion: 3.5/4.2;
+  --flip-card-border: #91a4a4;
+  --flip-card-border-radius: 2px;
+  --flip-card-background: #aab9b9;
 
   display: block;
   width: 100%;
@@ -23,14 +26,6 @@
 
 .memory-game--wrapper-interactive .memory-game--card {
   cursor: pointer;
-}
-
-.memory-game--card {
-  --flip-card-perspective: none;
-  --flip-card-proportion: 3.5/4.2;
-  --flip-card-border: #91a4a4;
-  --flip-card-border-radius: 2px;
-  --flip-card-background: #aab9b9;
 }
 
 .memory-game--media {
