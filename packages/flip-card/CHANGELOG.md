@@ -1,3 +1,10 @@
+# [@leofavre/flip-card-component-v1.4.1](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.4.0...@leofavre/flip-card-component-v1.4.1) (2018-10-18)
+
+
+### Bug Fixes
+
+* Allow styles to be set from the outside ([59a27de](https://github.com/leofavre/memory-game-elements/commit/59a27de))
+
 # [@leofavre/flip-card-component-v1.4.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/flip-card-component-v1.3.2...@leofavre/flip-card-component-v1.4.0) (2018-10-17)
 
 
