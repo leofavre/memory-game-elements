@@ -1,3 +1,10 @@
+# [@leofavre/memory-game-component-v1.3.1](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.3.0...@leofavre/memory-game-component-v1.3.1) (2018-10-18)
+
+
+### Bug Fixes
+
+* Allow styles to be set from the outside ([59a27de](https://github.com/leofavre/memory-game-elements/commit/59a27de))
+
 # [@leofavre/memory-game-component-v1.3.0](https://github.com/leofavre/memory-game-elements/compare/@leofavre/memory-game-component-v1.2.3...@leofavre/memory-game-component-v1.3.0) (2018-10-17)
 
 
